@@ -1,10 +1,18 @@
-package com.example.moviefetcher.domain;
+package com.spikart.sceneloader.domain;
 
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
+import androidx.databinding.BaseObservable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-public class Movie extends BaseObservable{
+import com.google.gson.annotations.SerializedName;
 
+
+@Entity(tableName="movies")
+public class Movie extends BaseObservable {
+
+    @PrimaryKey() @ColumnInfo(name="id") @SerializedName(value="id")
+    private Integer id;
 
 
 }

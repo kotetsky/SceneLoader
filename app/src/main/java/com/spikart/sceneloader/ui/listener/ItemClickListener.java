@@ -1,6 +1,6 @@
-package com.example.moviefetcher.ui.listener;
+package com.spikart.sceneloader.ui.listener;
 
-import com.example.moviefetcher.domain.Movie;
+import com.spikart.sceneloader.domain.Movie;
 
 public interface ItemClickListener {
 

@@ -1,4 +1,4 @@
-package com.example.moviefetcher.viewmodel;
+package com.spikart.sceneloader.viewmodel;
 
 public class MovieDetailsViewModel {
 }

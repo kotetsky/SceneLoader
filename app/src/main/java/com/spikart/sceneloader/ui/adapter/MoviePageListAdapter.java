@@ -1,19 +1,30 @@
-package com.example.moviefetcher.ui.adapter;
+package com.spikart.sceneloader.ui.adapter;
 
-import android.arch.paging.PagedListAdapter;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.util.DiffUtil;
-import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.example.moviefetcher.domain.Movie;
+import androidx.annotation.NonNull;
+import androidx.paging.PagedListAdapter;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.spikart.sceneloader.domain.Movie;
 
 public class MoviePageListAdapter extends PagedListAdapter<Movie, RecyclerView.ViewHolder> {
 
 
     public MoviePageListAdapter(Context context) {
-        super(Movie.);
+        super(new DiffUtil.ItemCallback<Movie>() {
+            @Override
+            public boolean areItemsTheSame(@NonNull Movie oldItem, @NonNull Movie newItem) {
+                return false;
+            }
+
+            @Override
+            public boolean areContentsTheSame(@NonNull Movie oldItem, @NonNull Movie newItem) {
+                return false;
+            }
+        });
 
     }
 
