@@ -14,7 +14,6 @@ import com.spikart.sceneloader.domain.Movie;
 import com.spikart.sceneloader.repository.storage.dao.MoviesDao;
 import com.spikart.sceneloader.repository.storage.paging.DBMoviesDataSourceFactory;
 
-import java.lang.reflect.Executable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
