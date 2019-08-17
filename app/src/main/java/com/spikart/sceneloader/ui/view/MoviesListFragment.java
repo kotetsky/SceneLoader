@@ -35,18 +35,19 @@ public class MoviesListFragment extends Fragment implements AdapterView.OnItemCl
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        viewModel = ViewModelProviders.of(getActivity()).get(MovieDetailsViewModel.class));
+        viewModel = ViewModelProviders.of(getActivity()).get(MoviesListViewModel.class);
 
         registerObservers();
         return view;
     }
 
     private void registerObservers() {
-        final MoviePageListAdapter pageListAdapter = new MoviePageListAdapter(this);
+        final MoviePageListAdapter pageListAdapter = new MoviePageListAdapter(this.getContext());
+        // todo Aerol write code
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        // todo aerol write code here
     }
 }

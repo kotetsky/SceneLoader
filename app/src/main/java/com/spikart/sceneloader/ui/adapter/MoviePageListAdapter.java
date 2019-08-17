@@ -14,18 +14,7 @@ public class MoviePageListAdapter extends PagedListAdapter<Movie, RecyclerView.V
 
 
     public MoviePageListAdapter(Context context) {
-        super(new DiffUtil.ItemCallback<Movie>() {
-            @Override
-            public boolean areItemsTheSame(@NonNull Movie oldItem, @NonNull Movie newItem) {
-                return false;
-            }
-
-            @Override
-            public boolean areContentsTheSame(@NonNull Movie oldItem, @NonNull Movie newItem) {
-                return false;
-            }
-        });
-
+        super(Movie.DIFF_CALLBACK);
     }
 
     @NonNull
