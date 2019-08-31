@@ -4,9 +4,9 @@ package com.spikart.sceneloader.repository.storage;
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
+import androidx.paging.LivePagedListBuilder;
 import androidx.paging.PagedList;
 import androidx.room.Database;
-import androidx.room.DatabaseConfiguration;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
@@ -55,6 +55,13 @@ public abstract class MoviesDatabase extends RoomDatabase {
         Executor executor = Executors.newFixedThreadPool(NUMBERS_OF_THREAD);
         DBMoviesDataSourceFactory dataSourceFactory = new DBMoviesDataSourceFactory(moviesDao());
 
+        LivePagedListBuilder livePagedListBuilder = new LivePagedListBuilder(dataSourceFactory, pageListConfig);
+
+        moviesPaged =livePagedListBuilder.setFetchExecutor(executor).build();
+    }
+
+    public LiveData<PagedList<Movie>> getMovies() {
+        return moviesPaged;
     }
 
 }

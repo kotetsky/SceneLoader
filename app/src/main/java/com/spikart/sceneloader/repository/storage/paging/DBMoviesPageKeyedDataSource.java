@@ -12,7 +12,7 @@ import java.util.List;
 
 public class DBMoviesPageKeyedDataSource extends PageKeyedDataSource<String, Movie> {
 
-    public static final String TAG = DBMoviesPageKeyedDataSource.class.getSimpleName();
+    private static final String TAG = DBMoviesPageKeyedDataSource.class.getSimpleName();
 
     private final MoviesDao moviesDao;
 
